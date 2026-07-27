@@ -1,15 +1,25 @@
 services:
   page1:
-    build:
-      context: page1
-    networks:
-      - jsanches-network
+    image: nginx
+  networks:
+    - jsanches-network
+
+    # page1:
+    # build:
+      # context: page1
+    # networks:
+      # - jsanches-network
+
+  # page2:
+    # build:
+      # context: page2
+    # networks:
+      # - jsanches-network
 
   page2:
-    build:
-      context: page2
-    networks:
-      - jsanches-network
+    image: nginx
+  networks:
+    - jsanches-network
 
   proxy:
     image: nginx
