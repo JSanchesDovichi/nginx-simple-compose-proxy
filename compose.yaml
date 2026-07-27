@@ -1,0 +1,28 @@
+services:
+  page1:
+    build:
+      context: page1
+    networks:
+      - jsanches-network
+
+  page2:
+    build:
+      context: page2
+    networks:
+      - jsanches-network
+
+  proxy:
+    image: nginx
+    volumes:
+      - ./nginx_proxy.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - page1
+      - page2
+    networks:
+      - jsanches-network
+
+networks:
+  jsanches-network:
+    driver: bridge
