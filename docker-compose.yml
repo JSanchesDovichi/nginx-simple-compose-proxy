@@ -3,23 +3,13 @@ services:
     image: nginx
     networks:
       - jsanches-network
-
-    # page1:
-    # build:
-      # context: page1
-    # networks:
-      # - jsanches-network
-
-  # page2:
-    # build:
-      # context: page2
-    # networks:
-      # - jsanches-network
-
+    restart: always
+      
   page2:
     image: nginx
     networks:
       - jsanches-network
+    restart: always
 
   proxy:
     image: nginx
@@ -32,6 +22,7 @@ services:
       - page2
     networks:
       - jsanches-network
+    restart: always
 
 networks:
   jsanches-network:
