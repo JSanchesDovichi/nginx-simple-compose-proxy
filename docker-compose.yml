@@ -1,8 +1,8 @@
 services:
   page1:
     image: nginx
-  networks:
-    - jsanches-network
+    networks:
+      - jsanches-network
 
     # page1:
     # build:
@@ -18,8 +18,8 @@ services:
 
   page2:
     image: nginx
-  networks:
-    - jsanches-network
+    networks:
+      - jsanches-network
 
   proxy:
     image: nginx
